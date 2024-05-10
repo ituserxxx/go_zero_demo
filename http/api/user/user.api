@@ -1,0 +1,21 @@
+syntax = "v1"
+
+
+type AddUserReq {
+	Name string `path:"name,options=you|me"`
+}
+
+type AddUserRes {
+	Message string `json:"message"`
+}
+
+@server(
+	prefix: /api/user
+	group: user
+)
+
+
+service http-api {
+	@handler addUser
+	post /add (AddUserReq) returns (AddUserRes)
+}

@@ -1,0 +1,21 @@
+syntax = "v1"
+
+type (
+
+    HelloHandlerReq {
+        Name string `path:"name,options=you|me"`
+    }
+
+    HelloHandlerRes {
+        Message string `json:"message"`
+    }
+)
+@server(
+	prefix: /api/hello
+	group: hello
+)
+
+service http-api {
+	@handler HelloHandler
+	get /from/:name(HelloHandlerReq) returns (HelloHandlerRes)
+}

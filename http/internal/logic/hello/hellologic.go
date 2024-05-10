@@ -1,4 +1,4 @@
-package logic
+package hello
 
 import (
 	"context"
@@ -9,21 +9,21 @@ import (
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
-type HttpLogic struct {
+type HelloLogic struct {
 	logx.Logger
 	ctx    context.Context
 	svcCtx *svc.ServiceContext
 }
 
-func NewHttpLogic(ctx context.Context, svcCtx *svc.ServiceContext) *HttpLogic {
-	return &HttpLogic{
+func NewHelloLogic(ctx context.Context, svcCtx *svc.ServiceContext) *HelloLogic {
+	return &HelloLogic{
 		Logger: logx.WithContext(ctx),
 		ctx:    ctx,
 		svcCtx: svcCtx,
 	}
 }
 
-func (l *HttpLogic) Http(req *types.Request) (resp *types.Response, err error) {
+func (l *HelloLogic) Hello(req *types.HelloHandlerReq) (resp *types.HelloHandlerRes, err error) {
 	// todo: add your logic here and delete this line
 
 	return

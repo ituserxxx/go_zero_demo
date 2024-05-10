@@ -1,14 +1,6 @@
 syntax = "v1"
 
-type Request {
-	Name string `path:"name,options=you|me"`
-}
+//  ../goctl api go -api=http.api -dir=./
 
-type Response {
-	Message string `json:"message"`
-}
-
-service http-api {
-	@handler HttpHandler
-	get /from/:name(Request) returns (Response)
-}
+import "api/hello/hello.api"
+import "api/user/user.api"
