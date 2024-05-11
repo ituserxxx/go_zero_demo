@@ -1,13 +1,13 @@
 package hello
 
 import (
-	"http/consts_code"
+	"go_zero_demo/http/consts_code"
 	"net/http"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
-	"http/internal/logic/hello"
-	"http/internal/svc"
-	"http/internal/types"
+	"go_zero_demo/http/internal/logic/hello"
+	"go_zero_demo/http/internal/svc"
+	"go_zero_demo/http/internal/types"
 )
 
 func FromHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {

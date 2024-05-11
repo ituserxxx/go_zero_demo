@@ -2,11 +2,11 @@ package hello
 
 import (
 	"context"
-	"http/db"
+	db2 "go_zero_demo/db"
 	"time"
 
-	"http/internal/svc"
-	"http/internal/types"
+	"go_zero_demo/http/internal/svc"
+	"go_zero_demo/http/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -27,11 +27,11 @@ func NewAddLogic(ctx context.Context, svcCtx *svc.ServiceContext) *AddLogic {
 
 func (l *AddLogic) Add(req *types.AddHelloReq) (resp *types.AddHelloRes, err error) {
 	resp = &types.AddHelloRes{}
-	newHello := db.Hello{
+	newHello := db2.Hello{
 		Name:       req.Name,
 		CreateTime: time.Now().Unix(),
 	}
-	err = db.DB.Model(db.Hello{}).Create(&newHello).Error
+	err = db2.DB.Model(db2.Hello{}).Create(&newHello).Error
 
 	resp.Id = newHello.Id
 	return

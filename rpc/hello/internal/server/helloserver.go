@@ -6,9 +6,9 @@ package server
 import (
 	"context"
 
-	"hello/hello"
-	"hello/internal/logic"
-	"hello/internal/svc"
+	"go_zero_demo/rpc/hello/hello"
+	"go_zero_demo/rpc/hello/internal/logic"
+	"go_zero_demo/rpc/hello/internal/svc"
 )
 
 type HelloServer struct {

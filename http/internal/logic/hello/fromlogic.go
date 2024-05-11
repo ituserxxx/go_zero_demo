@@ -3,8 +3,8 @@ package hello
 import (
 	"context"
 
-	"http/internal/svc"
-	"http/internal/types"
+	"go_zero_demo/http/internal/svc"
+	"go_zero_demo/http/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

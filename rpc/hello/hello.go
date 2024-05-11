@@ -4,10 +4,10 @@ import (
 	"flag"
 	"fmt"
 
-	"hello/hello"
-	"hello/internal/config"
-	"hello/internal/server"
-	"hello/internal/svc"
+	"go_zero_demo/rpc/hello/hello"
+	"go_zero_demo/rpc/hello/internal/config"
+	"go_zero_demo/rpc/hello/internal/server"
+	"go_zero_demo/rpc/hello/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/service"

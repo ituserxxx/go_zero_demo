@@ -6,7 +6,7 @@ package helloclient
 import (
 	"context"
 
-	"hello/hello"
+	"go_zero_demo/rpc/hello/hello"
 
 	"github.com/zeromicro/go-zero/zrpc"
 	"google.golang.org/grpc"

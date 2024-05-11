@@ -4,9 +4,9 @@ package handler
 import (
 	"net/http"
 
-	hello "http/internal/handler/hello"
-	user "http/internal/handler/user"
-	"http/internal/svc"
+	hello "go_zero_demo/http/internal/handler/hello"
+	user "go_zero_demo/http/internal/handler/user"
+	"go_zero_demo/http/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
 )

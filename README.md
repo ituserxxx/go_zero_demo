@@ -9,22 +9,27 @@ goctl env check --install --verbose --force
 ```shell
 ./goctl api new http
 
-```
-生成 http 代码
-```shell
-
+# 生成 http 代码
 cd http/
     
 ../goctl api go -api=http.api -dir=./
 
 ```
 
+
 创建 rpc 服务
 ```shell
 cd rpc/
 
 ../goctl rpc new hello
+
+# 生成 rpc 代码
+
+cd hello
+
+../../goctl rpc protoc hello.proto --go_out=./ --go-grpc_out=./ --zrpc_out=.
 ```
+
 
 服务依赖环境
 ```shell

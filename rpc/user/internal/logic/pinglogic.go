@@ -3,8 +3,8 @@ package logic
 import (
 	"context"
 
-	"user/internal/svc"
-	"user/user"
+	"go_zero_demo/rpc/user/internal/svc"
+	"go_zero_demo/rpc/user/user"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

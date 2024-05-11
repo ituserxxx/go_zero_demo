@@ -1,6 +1,6 @@
 package svc
 
-import "hello/internal/config"
+import "go_zero_demo/rpc/hello/internal/config"
 
 type ServiceContext struct {
 	Config config.Config

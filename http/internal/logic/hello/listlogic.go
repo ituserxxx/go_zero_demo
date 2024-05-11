@@ -3,9 +3,9 @@ package hello
 import (
 	"context"
 	"github.com/zeromicro/go-zero/core/logx"
-	"http/db"
-	"http/internal/svc"
-	"http/internal/types"
+	db2 "go_zero_demo/db"
+	"go_zero_demo/http/internal/svc"
+	"go_zero_demo/http/internal/types"
 )
 
 type ListLogic struct {
@@ -27,7 +27,7 @@ func (l *ListLogic) List(req *types.HelloListReq) (resp *types.HelloListResp, er
 		List:  make([]*types.HelloListItem, 0),
 		Total: 0,
 	}
-	orm := db.DB.Model(db.Hello{})
+	orm := db2.DB.Model(db2.Hello{})
 	orm.Count(&resp.Total)
 	orm.Offset((req.Page - 1) * req.PageSize).Limit(req.PageSize).Find(&resp.List)
 	return
