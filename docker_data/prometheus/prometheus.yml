@@ -1,0 +1,28 @@
+global:
+  scrape_interval: 10s
+  evaluation_interval: 10s
+  external_labels:
+    monitor: 'edc-lab-monitor'
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+        # - alertmanager:9093
+
+rule_files:
+# - "first.rules"
+# - "second.rules"
+
+scrape_configs:
+  - job_name: 'prometheus_server'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'http-api'
+    static_configs:
+      - targets: ['172.16.9.103:9880']
+
+  - job_name: 'hello-rpc'
+    static_configs:
+      - targets: ['172.16.9.103:9881']

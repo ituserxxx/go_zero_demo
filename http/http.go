@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"http/db"
 
 	"http/internal/config"
 	"http/internal/handler"
@@ -19,7 +20,7 @@ func main() {
 
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
-
+	db.Init()
 	server := rest.MustNewServer(c.RestConf)
 	defer server.Stop()
 

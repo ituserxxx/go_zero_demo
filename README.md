@@ -26,7 +26,15 @@ cd rpc/
 ../goctl rpc new hello
 ```
 
+服务依赖环境
+```shell
+（此代码开发主机在 172.16.9.103 上面，各种外部依赖服务在主机 172.16.9.116 上面）
 
+先启动 docker-compose-env.yml（需要修改 docker_data/prometheus/prometheus.yml 里面监控服务地址）
+
+docker compose -f docker-compose-env.yml up -d
+
+```
 
 
 

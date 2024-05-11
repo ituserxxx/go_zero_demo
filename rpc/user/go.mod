@@ -1,4 +1,4 @@
-module hello
+module user
 
 go 1.20
 

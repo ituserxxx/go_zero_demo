@@ -17,7 +17,22 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 			{
 				Method:  http.MethodGet,
 				Path:    "/from/:name",
-				Handler: hello.HelloHandler(serverCtx),
+				Handler: hello.FromHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/add",
+				Handler: hello.AddHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/del",
+				Handler: hello.DelHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/list",
+				Handler: hello.ListHandler(serverCtx),
 			},
 		},
 		rest.WithPrefix("/api/hello"),

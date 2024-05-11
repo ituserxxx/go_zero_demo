@@ -1,14 +1,48 @@
 syntax = "v1"
 
+
+
+type PageReq {
+	Page     int `json:"page,default=1"`
+	PageSize int `json:"pageSize,default=10"`
+}
+
 type (
+	FromReq {
+		Name string `path:"name,options=you|me"`
+	}
 
-    HelloHandlerReq {
-        Name string `path:"name,options=you|me"`
-    }
+	FromRes {
 
-    HelloHandlerRes {
-        Message string `json:"message"`
-    }
+		Message string `json:"message"`
+	}
+
+	AddHelloReq {
+		Name string `json:"name"`
+	}
+	AddHelloRes {
+		Id int64 `json:"id"`
+	}
+	DelHelloReq {
+		Id int `json:"id"`
+	}
+	DelHelloRes {
+	}
+	HelloListReq {
+		PageReq
+	}
+	HelloListItem {
+		Id         int64    `json:"id"`
+		Name       string `json:"name"`
+		CreateTime int   `gorm:"column:createTime"`
+	}
+
+	HelloListResp {
+		List  []*HelloListItem `json:"list"`
+		Total int64            `json:"total"`
+	}
+	
+	
 )
 @server(
 	prefix: /api/hello
@@ -16,6 +50,15 @@ type (
 )
 
 service http-api {
-	@handler HelloHandler
-	get /from/:name(HelloHandlerReq) returns (HelloHandlerRes)
+	@handler From
+	get /from/:name(FromReq) returns (FromRes)
+
+	@handler Add
+	post /add(AddHelloReq) returns(AddHelloRes)
+
+	@handler Del
+	post /del(DelHelloReq) returns(DelHelloRes)
+
+	@handler List
+	post /list(HelloListReq) returns(HelloListResp)
 }
