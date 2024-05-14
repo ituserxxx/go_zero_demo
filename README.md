@@ -5,8 +5,9 @@
 goctl env check --install --verbose --force
 ```
 
-创建 http 服务
+http 服务
 ```shell
+创建服务
 ./goctl api new http
 
 # 生成 http 代码
@@ -14,11 +15,14 @@ cd http/
     
 ../goctl api go -api=http.api -dir=./
 
+# 启动 http （项目根目录下执行）
+go run http/http.go -f http/etc/http-api.yaml 
 ```
 
 
-创建 rpc 服务
+rpc 服务
 ```shell
+# 创建 rpc 服务
 cd rpc/
 
 ../goctl rpc new hello
@@ -28,6 +32,9 @@ cd rpc/
 cd hello
 
 ../../goctl rpc protoc hello.proto --go_out=./ --go-grpc_out=./ --zrpc_out=.
+
+# 启动 rpc 服务 （项目根目录下执行）
+ go run rpc/hello/hello.go -f rpc/hello/etc/hello.yaml
 ```
 
 
