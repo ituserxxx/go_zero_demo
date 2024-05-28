@@ -21,8 +21,8 @@ scrape_configs:
 
   - job_name: 'http-api'
     static_configs:
-      - targets: ['172.16.9.103:9880']
+      - targets: ['172.16.9.103:4880']
 
   - job_name: 'hello-rpc'
     static_configs:
-      - targets: ['172.16.9.103:9881']
+      - targets: ['172.16.9.103:4881']

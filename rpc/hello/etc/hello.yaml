@@ -1,5 +1,12 @@
 Name: hello.rpc
-ListenOn: 0.0.0.0:9887
+ListenOn: 0.0.0.0:9881
+
+#监控
+Prometheus:
+  Host: 172.16.9.103
+  Port: 4881
+  Path: /metrics
+
 Etcd:
   Hosts:
   - 172.16.9.116:2379

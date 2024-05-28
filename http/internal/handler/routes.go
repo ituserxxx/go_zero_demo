@@ -34,6 +34,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Path:    "/list",
 				Handler: hello.ListHandler(serverCtx),
 			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/RpcList",
+				Handler: hello.RpcListHandler(serverCtx),
+			},
 		},
 		rest.WithPrefix("/api/http/hello"),
 	)

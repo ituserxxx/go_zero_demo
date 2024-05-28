@@ -41,8 +41,11 @@ type (
 		List  []*HelloListItem `json:"list"`
 		Total int64            `json:"total"`
 	}
-	
-	
+
+	HelloRpcListResp {
+		List  []*HelloListItem `json:"list"`
+		Total int64            `json:"total"`
+	}
 )
 @server(
 	prefix: /api/http/hello
@@ -61,4 +64,6 @@ service http-api {
 
 	@handler List
 	post /list(HelloListReq) returns(HelloListResp)
+	@handler RpcList
+	post /RpcList(HelloListReq) returns(HelloRpcListResp)
 }

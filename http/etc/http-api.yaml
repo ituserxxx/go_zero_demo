@@ -1,3 +1,9 @@
 Name: http-api
-Host: 0.0.0.0
-Port: 9888
+Host: 172.16.9.103
+Port: 9880
+
+#监控
+Prometheus:
+  Host: 172.16.9.103
+  Port: 4880
+  Path: /metrics

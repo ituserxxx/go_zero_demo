@@ -44,6 +44,11 @@ type HelloListResp struct {
 	Total int64            `json:"total"`
 }
 
+type HelloRpcListResp struct {
+	List  []*HelloListItem `json:"list"`
+	Total int64            `json:"total"`
+}
+
 type AddUserReq struct {
 	Name string `path:"name,options=you|me"`
 }
