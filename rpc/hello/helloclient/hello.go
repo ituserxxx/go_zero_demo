@@ -13,11 +13,15 @@ import (
 )
 
 type (
-	Request  = hello.Request
-	Response = hello.Response
+	Request      = hello.Request
+	Response     = hello.Response
+	UserListItem = hello.UserListItem
+	UserListReq  = hello.UserListReq
+	UserListResp = hello.UserListResp
 
 	Hello interface {
 		Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
+		UserList(ctx context.Context, in *UserListReq, opts ...grpc.CallOption) (*UserListResp, error)
 	}
 
 	defaultHello struct {
@@ -34,4 +38,9 @@ func NewHello(cli zrpc.Client) Hello {
 func (m *defaultHello) Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
 	client := hello.NewHelloClient(m.cli.Conn())
 	return client.Ping(ctx, in, opts...)
+}
+
+func (m *defaultHello) UserList(ctx context.Context, in *UserListReq, opts ...grpc.CallOption) (*UserListResp, error) {
+	client := hello.NewHelloClient(m.cli.Conn())
+	return client.UserList(ctx, in, opts...)
 }

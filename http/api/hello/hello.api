@@ -3,8 +3,8 @@ syntax = "v1"
 
 
 type PageReq {
-	Page     int `json:"page,default=1"`
-	PageSize int `json:"pageSize,default=10"`
+	Page     int64 `json:"page,default=1"`
+	PageSize int64 `json:"pageSize,default=10"`
 }
 
 type (
@@ -33,8 +33,8 @@ type (
 	}
 	HelloListItem {
 		Id         int64    `json:"id"`
-		Name       string `json:"name"`
-		CreateTime int   `gorm:"column:createTime"`
+		Name       string 	`json:"name"`
+		CreateTime int   	`gorm:"column:createTime"`
 	}
 
 	HelloListResp {

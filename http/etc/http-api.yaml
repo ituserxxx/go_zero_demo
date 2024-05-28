@@ -7,3 +7,10 @@ Prometheus:
   Host: 172.16.9.103
   Port: 4880
   Path: /metrics
+
+
+HelloRpc:
+  Etcd:
+    Hosts:
+      - 172.16.9.116:2379
+    Key: hello.rpc

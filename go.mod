@@ -3,6 +3,7 @@ module go_zero_demo
 go 1.20
 
 require (
+	github.com/jinzhu/copier v0.4.0
 	github.com/zeromicro/go-zero v1.6.4
 	google.golang.org/grpc v1.63.2
 	google.golang.org/protobuf v1.34.1

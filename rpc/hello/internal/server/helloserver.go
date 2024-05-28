@@ -26,3 +26,8 @@ func (s *HelloServer) Ping(ctx context.Context, in *hello.Request) (*hello.Respo
 	l := logic.NewPingLogic(ctx, s.svcCtx)
 	return l.Ping(in)
 }
+
+func (s *HelloServer) UserList(ctx context.Context, in *hello.UserListReq) (*hello.UserListResp, error) {
+	l := logic.NewUserListLogic(ctx, s.svcCtx)
+	return l.UserList(in)
+}

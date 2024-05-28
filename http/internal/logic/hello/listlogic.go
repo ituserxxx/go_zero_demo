@@ -29,6 +29,6 @@ func (l *ListLogic) List(req *types.HelloListReq) (resp *types.HelloListResp, er
 	}
 	orm := db2.DB.Model(db2.Hello{})
 	orm.Count(&resp.Total)
-	orm.Offset((req.Page - 1) * req.PageSize).Limit(req.PageSize).Find(&resp.List)
+	orm.Offset(int((req.Page - 1) * req.PageSize)).Limit(int(req.PageSize)).Find(&resp.List)
 	return
 }

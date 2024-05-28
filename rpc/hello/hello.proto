@@ -10,7 +10,20 @@ message Request {
 message Response {
   string pong = 1;
 }
-
+message UserListReq{
+  int64 page = 1;
+  int64 pageSize = 2;
+}
+message UserListItem{
+  int64 id = 1;
+  string name=2;
+  string createTime=3;
+}
+message UserListResp{
+  int64 total = 1;
+  repeated  UserListItem list = 2;
+}
 service Hello {
   rpc Ping(Request) returns(Response);
+  rpc UserList(UserListReq) returns(UserListResp);
 }

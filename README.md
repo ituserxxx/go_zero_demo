@@ -29,7 +29,7 @@ cd rpc/
 
 # 生成 rpc 代码
 
-cd hello
+cd rpc/hello
 
 ../../goctl rpc protoc hello.proto --go_out=./ --go-grpc_out=./ --zrpc_out=.
 

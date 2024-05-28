@@ -2,8 +2,8 @@
 package types
 
 type PageReq struct {
-	Page     int `json:"page,default=1"`
-	PageSize int `json:"pageSize,default=10"`
+	Page     int64 `json:"page,default=1"`
+	PageSize int64 `json:"pageSize,default=10"`
 }
 
 type FromReq struct {
